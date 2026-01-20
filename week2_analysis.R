@@ -93,5 +93,41 @@ for (metric in learning_metrics) {
   }
 }
 
+par(mfrow = c(1, 3))
+
+for (stage in stages) {
+  stage_subset <- participant_stage[participant_stage$Stage == stage, ]
+  if (nrow(stage_subset) > 0) {
+    boxplot(
+      AveAbsError ~ Group,
+      data = stage_subset,
+      main = paste("Average Abs Error -", stage),
+      xlab = "Group",
+      ylab = "Average Absolute Error",
+      col = c("lightblue", "lightgreen")
+    )
+  }
+}
+
+par(mfrow = c(1, 2))
+
+for (metric in learning_metrics) {
+  metric_values <- avg_wide[!is.na(avg_wide[[metric]]), ]
+  if (nrow(metric_values) > 0) {
+    hist(
+      metric_values[[metric]][metric_values$Group == "C"],
+      main = paste(metric, "- Control"),
+      xlab = metric,
+      col = "lightblue"
+    )
+    hist(
+      metric_values[[metric]][metric_values$Group == "E"],
+      main = paste(metric, "- Experimental"),
+      xlab = metric,
+      col = "lightgreen"
+    )
+  }
+}
+
 cat("Analysis complete.\n")
 
