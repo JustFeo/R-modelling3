@@ -368,7 +368,7 @@ class EnhancedStatisticalAnalysis(Scene):
             x_range=[-3, 5, 1],
             y_range=[0, 0.5, 0.1],
             x_length=7,
-            y_height=3.5,
+            y_length=3.5,
             axis_config={"include_numbers": False, "stroke_width": 2},
             tips=False
         ).move_to(ORIGIN).shift(DOWN*0.3)
