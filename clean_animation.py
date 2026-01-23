@@ -251,11 +251,16 @@ class CleanStatisticalAnalysis(Scene):
         exp_label.next_to(control_label, DOWN, buff=0.3)
         self.play(Write(exp_label), run_time=1)
         
-        exp_bars = [
-            Rectangle(width=0.5, height=0.51*6, fill_color="#00FF88", fill_opacity=0.7, stroke_width=2).move_to(axes.c2p(1, 0.255)).shift(RIGHT*0.3),
-            Rectangle(width=0.5, height=0.25*6, fill_color="#00FF88", fill_opacity=0.7, stroke_width=2).move_to(axes.c2p(2, 0.125)).shift(RIGHT*0.3),
-            Rectangle(width=0.5, height=0.28*6, fill_color="#00FF88", fill_opacity=0.7, stroke_width=2).move_to(axes.c2p(3, 0.14)).shift(RIGHT*0.3)
-        ]
+        exp_bar1 = Rectangle(width=0.5, height=0.51*6, fill_color="#00FF88", fill_opacity=0.7, stroke_width=2)
+        exp_bar1.move_to(axes.c2p(1, 0.255)).shift(RIGHT*0.3)
+        
+        exp_bar2 = Rectangle(width=0.5, height=0.25*6, fill_color="#00FF88", fill_opacity=0.7, stroke_width=2)
+        exp_bar2.move_to(axes.c2p(2, 0.125)).shift(RIGHT*0.3)
+        
+        exp_bar3 = Rectangle(width=0.5, height=0.28*6, fill_color="#00FF88", fill_opacity=0.7, stroke_width=2)
+        exp_bar3.move_to(axes.c2p(3, 0.14)).shift(RIGHT*0.3)
+        
+        exp_bars = [exp_bar1, exp_bar2, exp_bar3]
         
         for bar in exp_bars:
             self.play(GrowFromEdge(bar, DOWN), run_time=1)
@@ -264,9 +269,12 @@ class CleanStatisticalAnalysis(Scene):
         self.wait(2)
         
         # Highlight the difference in Training stage
+        arrow_start = axes.c2p(2, 0.36) + LEFT*0.25
+        arrow_end = axes.c2p(2, 0.25) + RIGHT*0.3
+        
         arrow = Arrow(
-            start=axes.c2p(2, 0.36).shift(LEFT*0.25),
-            end=axes.c2p(2, 0.25).shift(RIGHT*0.3),
+            start=arrow_start,
+            end=arrow_end,
             color=YELLOW,
             stroke_width=4,
             buff=0.1
