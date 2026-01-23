@@ -1,0 +1,7 @@
+file 'media/videos/animation_complete/1080p60/Scene1_Introduction.mp4'
+file 'media/videos/animation_complete/1080p60/Scene2_PersonalityDistributions.mp4'
+file 'media/videos/animation_complete/1080p60/Scene3_LearningEffects.mp4'
+file 'media/videos/animation_complete/1080p60/Scene4_RegressionModels.mp4'
+file 'media/videos/animation_complete/1080p60/Scene5_PowerAnalysis.mp4'
+file 'media/videos/animation_complete/1080p60/Scene6_TraitDependence.mp4'
+file 'media/videos/animation_complete/1080p60/Scene7_Conclusion.mp4'
